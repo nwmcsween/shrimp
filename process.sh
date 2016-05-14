@@ -1,10 +1,7 @@
-if [ -z "$PROCESS_SH" ]; then
-PROCESS_SH=1
+proc_abort() {
+    args="$*"
 
-pabort() {
-    printf "%s\n" "$*"
+    printf "%s\n" "$args"
     exit 1
 }
-
-fi
 

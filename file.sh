@@ -1,8 +1,6 @@
-if [ -z "$FILE_SH" ]; then
-FILE_SH=1
-
-ftmp() {
+file_tmp() {
     src=$1; dir=$2
+
     set -C
     i=0;
 
@@ -15,6 +13,4 @@ ftmp() {
     return 0;
 
 }
-
-fi
 

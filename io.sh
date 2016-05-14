@@ -1,9 +1,6 @@
-if [ -z "$IO_SH" ]; then
-IO_SH=1
+io_puts() {
+    args="$*"
 
-iop() {
-    printf "%s\n" "$*";
+    printf "%s\n" "$args";
 }
-
-fi
 

@@ -1,10 +1,9 @@
-if [ -z "$REGEX_SH" ]; then
-REGEX_SH=1
+rx_match() {
+    needle="$1"; haystack="$2"
 
-rmatch() {
     eval \
-        "case \"\$2\" in
-            $1)
+        "case \"\$haystack\" in
+            $needle)
                 return 0
             ;;
             *)
@@ -12,6 +11,4 @@ rmatch() {
             ;;
         esac";
 }
-
-fi
 
