@@ -4,7 +4,7 @@ cc() {
     $CC $args -o /dev/null "$file" > /dev/null 2>&1;
 }
 
-cc_is_ppsym() {
+cc_is_pp() {
     file=$1; pp_sym=$2
 
     printf "typedef int x;\n#if \"$pp_sym\"\n#error\n#endif" > "$file"
