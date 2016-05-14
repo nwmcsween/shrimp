@@ -1,0 +1,4 @@
+= Shrimp
+
+Various shell useful shell functions
+
