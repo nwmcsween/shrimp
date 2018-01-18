@@ -1,7 +1,7 @@
 proc_abort() {
-    args="$*"
+  args="$*"
 
-    printf "%s\n" "$args"
-    exit 1
+  printf "%s\n" "$args"
+  exit 1
 }
 
