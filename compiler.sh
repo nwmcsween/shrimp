@@ -1,27 +1,27 @@
 cc() {
-    file=$1; args=$2
+  cc=$1 file=$2; args=$3
 
-    $CC $args -o /dev/null "$file" > /dev/null 2>&1;
+  $cc $args -o /dev/null "$file" > /dev/null 2>&1;
 }
 
 cc_is_pp() {
-    file=$1; pp_sym=$2
+  cc=$1; file=$2; pp_sym=$3
 
-    printf "typedef int x;\n#if \"$pp_sym\"\n#error\n#endif" > "$file"
-    cc "$file" "-c"
+  printf "typedef int x;\n#if \"$pp_sym\"\n#error\n#endif" > "$file"
+  $cc "$file" "-c"
 }
 
 cc_is_lflag() {
-    file=$1; lflag=$2
+  cc=$1; file=$2; lflag=$3
 
-    printf "typedef int x;\n" > "$file"
-    cc "$file" "-nostdlib -shared $lflag"
+  printf "typedef int x;\n" > "$file"
+  $cc "$file" "-nostdlib -shared $lflag"
 }
 
 cc_is_flag() {
-    file=$1; flag=$2
+  cc=$1; file=$2; flag=$3
 
-    printf "typedef int x;\n" > "$file"
-    cc "$file" "-c $lflag"
+  printf "typedef int x;\n" > "$file"
+  $cc "$file" "-c $lflag"
 }
 
