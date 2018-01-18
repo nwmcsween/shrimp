@@ -1,6 +1,6 @@
 io_puts() {
-    args="$*"
+  args="$*"
 
-    printf "%s\n" "$args";
+  printf "%s\n" "$args";
 }
 
