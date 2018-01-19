@@ -1,3 +1,6 @@
+if [ -z "$COMPILER_SH" ]; then
+COMPILER_SH=1
+
 cc() {
   cc=$1 file=$2; args=$3
 
@@ -24,3 +27,5 @@ cc_is_flag() {
   printf "typedef int x;\n" > "$file"
   $cc "$file" "-c $flag"
 }
+
+fi

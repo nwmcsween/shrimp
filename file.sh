@@ -1,3 +1,6 @@
+if [ -z "$FILE_SH" ]; then
+FILE_SH=1
+
 file_tmp() {
   src=$1; dir=$2; ext=$3
 
@@ -17,3 +20,5 @@ file_tmp() {
 
   test "$i" -eq 0 && return 0 || return 1
 }
+
+fi
