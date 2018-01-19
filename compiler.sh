@@ -7,7 +7,7 @@ cc() {
 cc_is_pp() {
   cc=$1; file=$2; pp_sym=$3
 
-  printf "typedef int x;\n#if \"$pp_sym\"\n#error\n#endif" > "$file"
+  printf "typedef int x;\n#if \"%s\"\n#error\n#endif" "$pp_sym" > "$file"
   $cc "$file" "-c"
 }
 
@@ -22,6 +22,5 @@ cc_is_flag() {
   cc=$1; file=$2; flag=$3
 
   printf "typedef int x;\n" > "$file"
-  $cc "$file" "-c $lflag"
+  $cc "$file" "-c $flag"
 }
-
