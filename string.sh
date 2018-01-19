@@ -1,7 +1,7 @@
 str_to_sha1() {
-  dst="$!"; src="$2"
+  dst="$1"; src="$2"
 
-  eval "$1=\"\$(printf \"\$2\" | sha1sum | cut -c1-7)\""
+  eval "$1=\"\$(printf \"%s\" \"\$2\" | sha1sum | cut -c1-7)\""
 
   return $?
 }
