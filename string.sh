@@ -1,6 +1,8 @@
 if [ -z "$STRING_SH" ]; then
 STRING_SH=1
 
+. regex.sh
+
 str_to_sha1() {
   dst="$1"; src="$2"
 
