@@ -4,4 +4,3 @@ proc_abort() {
   printf "%s\n" "$args"
   exit 1
 }
-

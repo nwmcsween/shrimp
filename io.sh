@@ -3,4 +3,3 @@ io_puts() {
 
   printf "%s\n" "$args";
 }
-
