@@ -1,20 +1,17 @@
-if [ -z "$PATH_SH" ]; then
-PATH_SH=1
+#!/bin/sh
 
-path_resolve() {
-	dst="$1"; src="$2"
-
-	eval "$dst=\"\$(ls -l \$src | awk '{ printf \$NF }')\"" && return 0
-
-	return 1
+path_absolute() {
+  printf "%s" "$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"
 }
 
-path_real() {
-	src="$1"
+path_relative() {
+  dst="$(cd $(dirname $1); pwd -P)"; src="$(cd $(dirname $1); pwd -P)"
+  up=
 
-	cd $(dirname \"$src\")
-	printf "%s" "$(pwd)/$(basename \"$src\")"
-	cd -
+  while [ "${dst#$src/}" = "$dst" ]; do
+    src=$(dirname "$src")
+    up="../$up"
+  done
+
+  printf "%s" "$up${dst#$src}/"
 }
-
-fi

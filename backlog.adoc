@@ -1,4 +1,5 @@
 Todo
 ----
 * Quote function
-
+* Create tests, hopefully with a 'framework' that doesn't suck
+* create str_icat - string idempotent concatenation, e.g. PATH=$PATH:foo will have foo once even if previously set.

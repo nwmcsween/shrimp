@@ -1,10 +1,5 @@
-if [ -z "$CMD_SH" ]; then
-CMD_SH=1
+#!/bin/sh
 
 cmd_exists() {
-  cmd=$1
-
-  type "$cmd" >/dev/null 2>&1;
+  type "$1" > /dev/null 2>&1
 }
-
-fi
